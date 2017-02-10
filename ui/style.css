@@ -1,19 +1,12 @@
-body {
-    font-family: sans-serif;
-    background-color: blue;
-    margin-top: 75px;
+<style>
+.clipped {
+  width: 220px;
+  height: 150px;
+  padding: 10px;
+  background-color: yellowgreen;
+  background-image: url(/pix/byron_bay_300x225.jpg);
+  border: 20px solid rgba(0,0,0,0.3);
+  background-clip: border-box;
+  background-origin: border-box;
 }
-
-h1 {
-    background-color: blue;
-}
-
-div {
-    background-color: lightblue;
-}
-
-p {
-    background-color: yellow;
-}
-
 
