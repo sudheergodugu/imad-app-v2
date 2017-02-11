@@ -1,3 +1,12 @@
-console.log('Loaded!');
-script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+$(".name").focus(function(){
+  $(".name-help").slideDown(500);
+}).blur(function(){
+  $(".name-help").slideUp(500);
+});
+
+$(".email").focus(function(){
+  $(".email-help").slideDown(500);
+}).blur(function(){
+  $(".email-help").slideUp(500);
+});
+
