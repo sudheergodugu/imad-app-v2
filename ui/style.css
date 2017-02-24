@@ -99,13 +99,13 @@ input[type="submit"]:hover{
 
 .name-help,.email-help{
   display:none;
-  padding:0px;
-  margin:0px 0px 15px 0px;
+  padding:30px;
+  margin:100px 110px 115px 110px;
 }
 
 .optimize{
   position:fixed;
   right:3%;
-  top:0px;
+  top:77px;
 }
 </html>
