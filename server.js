@@ -6,8 +6,8 @@
   var bodyParser = require('body-parser');
   var session = require('express-session');
   
- -// commit
-  var config = {
+ // commit
+ var confg = {
       user: 'sudheergodugu',
       database: 'sudheergodugu',
      host: 'db.imad.hasura-app.io',
