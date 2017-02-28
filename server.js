@@ -1,13 +1,13 @@
- var express = require('express');
+  var express = require('express');
  var morgan = require('morgan');
  var path = require('path');
  var Pool = require('pg').Pool;
  var crypto = require('crypto');
   var bodyParser = require('body-parser');
- 
+  var session = require('express-session');
   
  // commit
- var confg = {
+var config = {
       user: 'sudheergodugu',
       database: 'sudheergodugu',
      host: 'db.imad.hasura-app.io',
@@ -201,7 +201,7 @@
                              if (err) {
                                  res.status(500).send(err.toString());
                              } else {
-                                 res.status(200).send('Comment inserted!');
+                                 res.status(200).send('Comment inserted!')
                              }
                          });
                  }
@@ -236,9 +236,4 @@
  var port = 8080; // Use 8080 for local development because you might already have apache running on 80
  app.listen(8080, function () {
    console.log(`IMAD course app listening on port ${port}!`);
- });
- 
- var port = 8080; // Use 8080 for local development because you might already have apache running on 80
- app.listen(8080, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
  });
