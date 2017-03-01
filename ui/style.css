@@ -1,109 +1,41 @@
-<!DOCTYPE html>
-<html>
+{
+    border:10px solid grey;
+}
 
-   <head>
-          <link href="/ui/style.css" rel="stylesheet" />
-          
-          <head>
 
-<!-- your webpage info goes here -->
+body {
+     font-family: sans-serif;
+     margin-top: 100px;
+ }
 
-    <title>The Daily Traveller</title>
-	
-	<meta name="author" content="your name" />
-	<meta name="description" content="" />
-
-<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	
-</head>
-<body>
-
-<!-- webpage content goes here in the body -->
-
-	<div id="page">
-		<div id="logo">
-			<h1><a href="/" id="logoLink">The Daily Traveller</a></h1>
-		</div>
-		<div id="nav">
-			
-		</div>
-		<div id="content">
-		
-			<p>
-          
-          
-          
-       <p>	<img style="-webkit-user-select: none;background-position: 0px 0px, 300px 300px;background-size: 330px 300px;(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%);" src="http://tbn.freelogodesign.org/b661e95f-7eb5-436c-864d-6c90091ffff3.png?1486903052917"></p>
-</head>
-   
-<title>daily traveller.com</title>
-</head>
-<body style="background-color:orange;color:white;">
  
-...Travelling begins now...
-
-	
-
-
-				
-        <style type="text/css">
-
-            body {font-family:Arial, Sans-Serif;}
-
-            #container {width:700px; margin:0 auto;}
-
-            /* Nicely lines up the labels. */
-            form label {display:inline-block; width:290px;}
-
-            /* You could add a class to all the input boxes instead, if you like. That would be safer, and more backwards-compatible */
-            form input[type="text"],
-            form input[type="password"],
-            form input[type="email"] {width:160px;}
-
-            form .line {clear:both;}
-            form .line.submit {text-align:right;}
-
-        </style>
+ 
+ 
+ .center {
+     text-align: center;
+ }
+ 
+ .text-big {
+     font-size: 300%;
+ }
+ 
+ .bold {
+     font-weight: bold;
+ }
+ 
+ .img-medium {
+     height: 200px;
+ }
+ 
+ .container {
+     max-width: 800px;
+     margin: 0 auto;
+     color: #4a4a4a;
+     font-family: sans-serif;
+     padding-left: 20px;
+     padding-right: 20px;
+ }
+ 
+ 
   
-
-	<form tag="Create Logon">
-		<div align="center">
-			Username *: <input type="username" name="username" /><br />
-			
-			Password *: <input type="password" name="pwd" /><br />
-			
-			Surname *: <input type="surname" name="surname" /><br />
-			
-			Other Names *: <input type="other names" name="names" /><br />
-			
-			Date of Birth *: <input type="date of birth" name="dob" /><br />
-			
-			Email *: <input type="email" name="email" /><br />
-		
-		
-
-		<input type="submit" value="Submit" />
-		</div>
-	 
-           <div id="login_area">
-                 <center>Loading login status...</center>
-             </div>
-             <hr/>
-             <h3>My Articles</h3>
-             <div id="articles">
-                 <center>Loading articles...</center>
-             </div>
-             <div class="footer">
-             </div>
-         </div>
-         <script type="text/javascript" src="/ui/main.js">
-         </script> 
  
-</body>
-	</form>
-                                 <p>sudheer 2017 &copy;copyright</p>
-
-
-</body>
-</html>
