@@ -59,13 +59,13 @@ body{
 			}
 			#nav ul li a:active{ background-color: #ff8f00; }
 				#nav ul li.orange a{
-					background-color: red;
-				}
-				#nav ul li.white a{
 					background-color: orange;
 				}
+				#nav ul li.white a{
+					background-color: white;
+				}
 				#nav ul li.green a{
-					background-color: yellow;
+					background-color: green;
 				}
 				
 #content{
