@@ -37,5 +37,12 @@ body {
  }
  
  
-  
+   #content:hover{
+        background-color: orange;
+        color:white;
+    }
+    #content:active{
+        background-color: red;
+        color:white;
+    }
  
