@@ -22,17 +22,17 @@ console.log('Loaded!');
             if (request.readyState === XMLHttpRequest.DONE) {
                 // Take some action
                 if (request.status === 200) {
- -                  alert('Logged in successfully');
+                   alert('Logged in successfully');
                     submit.value = 'Sucess!';
                 } else if (request.status === 403) {
- -                  alert('Username/password is incorrect');
- -                  submit.value = 'Login';
- +                  submit.value = 'Invalid credentials. Try again?';
+                  alert('Username/password is incorrect');
+                  submit.value = 'Login';
+                   submit.value = 'Invalid credentials. Try again?';
                 } else if (request.status === 500) {
                     alert('Something went wrong on the server');
                     submit.value = 'Login';
                 } else {
- +                  alert('Something went wrong on the server');
+                  alert('Something went wrong on the server');
                     submit.value = 'Login';
                 }
                 loadLogin();
@@ -123,10 +123,10 @@ console.log('Loaded!');
                      <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
                      (${articleData[i].date.split('T')[0]})</li>`;
                  }
-                 content += "</ul>"
+                 content += "</ul>";
                  articles.innerHTML = content;
              } else {
-                 articles.innerHTML('Oops! Could not load all articles!')
+                 articles.innerHTML('Oops! Could not load all articles!');
              }
          }
      };
