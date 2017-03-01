@@ -1,7 +1,18 @@
 {
     border:10px solid grey;
 }
+p{ line-height: 1em; }
+{
 
+    line-height: 1.1em;
+	margin: 0 0 .5em 0;
+}
+
+a{
+
+	color: black;
+	text-decoration: none;
+}
 
 body {
      font-family: sans-serif;
