@@ -54,13 +54,13 @@ body {
 				box-shadow: 0px 1px 1px #666;
 			}
 			#nav ul li a:active{ background-color: #ff8f00; }
-				#nav ul li.red a{
+				#nav ul li.orange a{
 					background-color: red;
 				}
 				#nav ul li.orange a{
 					background-color: orange;
 				}
-				#nav ul li.yellow a{
+				#nav ul li.orange a{
 					background-color: yellow;
 				}
 				
