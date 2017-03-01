@@ -11,7 +11,7 @@ var express = require('express');
       user: 'sudheergodugu',
       database: 'sudheergodugu',
      host: 'db.imad.hasura-app.io',
-     port: '5432',
+     port: '8080',
      password: process.env.DB_PASSWORD
  };
  
