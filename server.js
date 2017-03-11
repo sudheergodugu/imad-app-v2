@@ -16,6 +16,9 @@ var express = require('express');
   app.get('/ui/madi.png', function (req, res) {
      res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
    });
+    app.get('/ui/madi.png', function (req, res) {
+     res.sendFile(path.join(__dirname, 'ui', 'c864d931-e2e4-4ac6-a57f-2afce3efd134.jpg'));
+   });
    app.get('/article-one.html', function (req, res) {
  -   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
  +   res.send ("article-one requested and will be served here");
