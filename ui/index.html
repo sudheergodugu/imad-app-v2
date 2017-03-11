@@ -1,131 +1,62 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    <title>Home | the daily traveller</title>
 
-   <head>
-          <link href="/ui/style.css" rel="stylesheet" />
-          
-          <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/ui/style2.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
 
-<!-- your webpage info goes here -->
-
-    <title>The Daily Traveller</title>
-	
-	<meta name="author" content="your name" />
-	<meta name="description" content="" />
-
-<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-     <link href="/ui/style2.css" rel="stylesheet" />
-     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
- 
 </head>
 <body>
 
-<!-- webpage content goes here in the body -->
+    <div id="home-sec">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 text-center">
+                       
+                        <h1>im sudheer</h1>
+                        <h2>ceo of daily traveller</h2>
+                        <a href="https://meetnishant.net/meet-me/" target="_blank" class="btn custom-btn-one btn-style-three btn-lg">EXPLORE MYSELF</a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                        <br><br>
+                        <a href="https://www.facebook.com/gsudheeryadav" target="_blank">
+                            <i class="fa fa-facebook icon-round icon-round"></i>
+                            <h3>FACEBOOK</h3>
+                        </a>
+                        <br><br><br><br><br>
+                        <a href="https://github.com/sudheergodugu" target="_blank">
+                            <i class="fa fa-github icon-round icon-round"></i>
+                            <h3>GITHUB</h3>
+                        </a>
+                        
+                        
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                        <br><br>
+                        <a href="https://twitter.com/gsudheeryadav" target="_blank">
+                            <i class="fa fa-twitter icon-round"></i>
+                            <h3>TWITTER</h3>
+                        </a>
+                        <br><br><br><br><br>
+                            <h3 class="likes-container"><span class="total-likes" id="count">0</span></h3>
+                            <br>
+                            <button class="btn custom-btn-one btn-style-three" id="counter"><b>LIKE MY SITE <i class="fa fa-heart"></i></b></button>
+                    </div>
+                </div>
 
-	<div id="page">
-		<div id="logo">
-			<h1><a href="/" id="logoLink">The Daily Traveller</a></h1>
-		</div>
-			<div id="nav">
-			<ul>
-				<li class="red"><a href="#/home.html">Home</a></li>
-				<li class="orange"><a href="#/about.html">About</a></li>
-				<li class="yellow"><a href="#/contact.html">Contact</a></li>
-			</ul>	
-		</div>
-		<div id="nav">
-
-		</div>
-		<div id="content">
-		
-			<p>
-          
-          
-          
-       <p>	<img style="-webkit-user-select: none;background-position: 0px 0px, 300px 300px;background-size: 330px 300px;(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%);" src="http://tbn.freelogodesign.org/b661e95f-7eb5-436c-864d-6c90091ffff3.png?1486903052917"></p>
-</head>
-   
-<title>daily traveller.com</title>
-</head>
-<body style="background-color:orange;color:white;">
- 
-...Travelling begins now...
-
-	
-
-
-				
-        <style type="text/css">
-
-            body {font-family:Arial, Sans-Serif;}
-
-            #container {width:700px; margin:0 auto;}
-
-            /* Nicely lines up the labels. */
-            form label {display:inline-block; width:290px;}
-
-            /* You could add a class to all the input boxes instead, if you like. That would be safer, and more backwards-compatible */
-            form input[type="text"],
-            form input[type="password"],
-            form input[type="email"] {width:160px;}
-
-            form .line {clear:both;}
-            form .line.submit {text-align:right;}
-
-        </style>
-  
-
-	<form tag="Create Logon">
-		<div align="center">
-			Username *: <input type="username" name="username" /><br />
-			
-			Password *: <input type="password" name="pwd" /><br />
-			
-			Surname *: <input type="surname" name="surname" /><br />
-			
-			Other Names *: <input type="other names" name="names" /><br />
-			
-			Date of Birth *: <input type="date of birth" name="dob" /><br />
-			
-			Email *: <input type="email" name="email" /><br />
-		
-		
-
-		<input type="submit" value="Submit" />
-		</div>
-	 
-          
-             <div class="footer">
-             </div>
-         </div>
-         <script type="text/javascript" src="/ui/main.js">
-         </script> 
-     </div>
-            <div class="footer"><br/>
-                This button &nbsp<button id="counter">CLICK ME</button>&nbsp has been clicked <span id="count"> 0 </span> times.<br/> 
-                <hr/>
-                <input type="text" id="name" placeholder="name"></input>
-                <input type="submit" value="Submit" id="submit_btn"></input>
-                <ul id="nameList">
-                </ul>    
-            </div>    
+            </div>
         </div>
-              <a href="/articles/article-one">PAGE-ONE &nbsp</a>
-              <a href="/articles/article-two">PAGE-TWO &nbsp</a>
-              <a href="/articles/article-three">PAGE-THREE &nbsp</a>
-
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>
-       </script>
-       <script type="text/javascript" src="/ui/main.js">    </script> 
-        
-</body>
-	</form>
-                                 <p>sudheer 2017 &copy;copyright</p>
-
+    </div>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/ui/main.js"></script>
 
 </body>
 </html>
