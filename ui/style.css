@@ -50,11 +50,11 @@ border-radius: 0px!important;
 
  .btn-style-three {
     color: #fff;
-background-color: #3BAD72;
-border-color: #44EBB5;
+background-color: orange;
+border-color: blue;
 border-radius: 0px!important;
--webkit-border-radius:  0px!important;
--moz-border-radius:  0px!important;
+-webkit-border-radius:  10px!important;
+-moz-border-radius:  10px!important;
 }
 .btn-style-three:hover {
     color: #fff;
@@ -67,7 +67,7 @@ padding: 0;
 -webkit-background-size: cover;
 background-size: cover;
 background-attachment: fixed;
-color:#fff;
+color:orange;
 
 
 }
@@ -134,11 +134,11 @@ cursor: pointer;
 }
 
  h1 {
-color:#00ADAD;
+color:black;
 }
 
 .custom-btn-one {
-   border-color: #00ADAD;
+   border-color: blue;
 }
    
  #home-sec .main-img {     
@@ -162,7 +162,7 @@ color:#00ADAD;
 }
 
 .total-likes:hover {
-        background-color:#00ADAD;
+        background-color:orange;
     }
 
 
