@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: 'darkfist',
-    database: 'darkfist',
+    user: 'sudheergodugu',
+    database: 'sudheergodugu',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -174,7 +174,9 @@ app.get('/articles/:articleName', function (req, res) {
   });
   
 });
-
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
