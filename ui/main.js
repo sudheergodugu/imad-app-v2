@@ -1,6 +1,4 @@
-console.log('Loaded!');
- 
- // submit username and password
+// submit username and password
 var submit = document.getElementById('submit_btn');
 
 submit.onclick = function() {
@@ -28,7 +26,7 @@ submit.onclick = function() {
     // make the request
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    request.open('POST', 'http://sudheergodugu.imad.hasura-app.io/login', true);
+    request.open('POST', 'http://darkfist.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
 };
