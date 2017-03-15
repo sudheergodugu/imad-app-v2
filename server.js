@@ -17,7 +17,7 @@ var express = require('express');
  });
  
  app.get('/article-one', function (req, res) {
-   res.send('/article one recieved and served here');
+   res.send('article one recieved and served here');
  });
  
  var port = 8080; // Use 8080 for local development because you might already have apache running on 80
