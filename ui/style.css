@@ -1,172 +1,87 @@
-body {
-    font-family: 'Open Sans', sans-serif;
+/*
+* multi-line comment
+*/
+p{ line-height: 1em; }
+h1, h2, h3, h4{
+    color: orange;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin: 0 0 .5em 0;
 }
+h1{ font-size: 1.7em; }
+h2{ font-size: 1.5em; }
+a{
+	color: black;
+	text-decoration: none;
+}
+	a:hover,
+	a:active{ text-decoration: underline; }
 
-.pad-top {
-    padding-top:50px;
-}
-.pad-top-bottom {
-     padding-top:20px;
-      padding-bottom:30px;
-}
-.text-center {
-    text-align:center;
-}
+/* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */
 
-section {
-    padding:40px 0px 40px 0px;
+body{
+    font-family: arial; font-size: 80%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;
+    font-weight: normal;
 }
-p {
-    line-height:30px;
-    font-size:16px;
-    padding:10px 0px 10px 0px;
-}
- h1 {
-font-weight: 900;
-color:white;
-}
+/* you can but your code all in one line like above */
+#page{ margin: 20px; }
 
+/* or on different lines like below */
+#logo{
+	width: 35%;
+	margin-top: 5px;
+	font-family: georgia;
+	display: inline-block;
+}
+/* but try and be as consist possible */
+#nav{
+	width: 60%;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+	#nav ul{}
+		#nav ul li{
+			display: inline-block;
+			height: 62px;
+		}
+			#nav ul li a{
+				padding: 20px;
+				background: orange;
+				color: white;
+			}
+			#nav ul li a:hover{
+				background-color: #ffb424;
+				box-shadow: 0px 1px 1px #666;
+			}
+			#nav ul li a:active{ background-color: #ff8f00; }
+				#nav ul li.red a{
+					background-color: red;
+				}
+				#nav ul li.orange a{
+					background-color: orange;
+				}
+				#nav ul li.yellow a{
+					background-color: yellow;
+				}
+				
+#content{
+	margin: 30px 0;
+	background: white;
+	padding: 20px;
+	clear: both;
+}
+#footer{
+	border-bottom: 1px #ccc solid;
+	margin-bottom: 10px;
+}
+	#footer p{
+		text-align: right;
+		text-transform: uppercase;
+		font-size: 80%;
+		color: grey;
+	}
 
-.custom-btn-one {
-    color: #fff;
-   background-color:white;
-   border-color: red;
-}
-    .custom-btn-one:hover {
-         color: white;
-        background-color:white;
-    }
-    .btn-style-two {
-    color: white;
-background-color: white
-border-color: red;
-border-radius: 1px!important;
--webkit-border-radius:  0px!important;
--moz-border-radius:  0px!important;
-}
-.btn-style-two:hover {
-    color: #fff;
-}
-
- .btn-style-three {
-    color: #fff;
-background-color: white;
-border-color: red;
-border-radius: 0px!important;
--webkit-border-radius:  0px!important;
--moz-border-radius:  0px!important;
-}
-.btn-style-three:hover {
-    color: white;
-}
-
-#home-sec {
-    
-    background: url(home.jpg) no-repeat center center;
-padding: 0;
--webkit-background-size: cover;
-background-size: cover;
-background-attachment: fixed;
-color:#fff;
-
-
-}
-    #home-sec .overlay {
-        padding-top:100px;
-        background:rgba(0, 0, 0, 0.80);
-        min-height:790px;
-    }
- #home-sec .main-img {
-     
-    max-height:200px;
-    border:5px solid rgb(255, 15, 101);
-    cursor:pointer;
-}
-
-    #home-sec a,#home a:hover {
-        text-decoration:none;
-    }
-#home-sec .main-img-2 {
-     max-height:200px;
-   border:5px solid rgb(255, 15, 101);
-  cursor:pointer;
-}
- 
-
-#home-sec h1 {
-font-weight: 900;
-padding: 20px 0px 0px 0px;
-}
-#home-sec h2 {
-font-weight: 400;
-padding: 0px 0px 30px 0px;
-color:#fff;
-}
-#home-sec h3 {
-padding: 5px 0px;
-color:#fff;
-font-weight:800;
-}
-    #home-sec small {
-        color:#fff;
-    }
-.icon-round {
-font-size: 30px;
-height: 60px;
-width: 60px;
-line-height: 60px;
-color: #fff;
-border: 2px solid #fff;
-text-align: center;
-border-radius: 50%;
--webkit-transition: 400ms;
--moz-transition: 400ms;
--o-transition: 400ms;
-transition: 400ms;
-cursor: pointer;
-}
-    .icon-round:hover {
-        background-color:rgb(255, 15, 101);
-    }
-
-.icon-round-active {
-      background-color:rgb(255, 15, 101);
-}
-
- h1 {
-color:#00ADAD;
-}
-
-.custom-btn-one {
-   border-color: #00ADAD;
-}
-   
- #home-sec .main-img {     
-   border:5px solid #00ADAD;
-}
- #home-sec .main-img-2 {
-   border:5px solid #00ADAD;
-}
-    .icon-round:hover {
-        background-color:#00ADAD;
-    }
-
-.icon-round-active {
-      background-color:#00ADAD;
-}
-
-.total-likes {
-  border:2px solid #FFFFFF;
-  border-radius: 50%; 
-  padding: 12px 18px;
-}
-
-.total-likes:hover {
-        background-color:#00ADAD;
-    }
-
-
-.likes-container {
-  margin-top: 9px;
-  margin-bottom: 10px;
-}
+/* multiple styles seperated by a , */
+#content,
+ul li a{ box-shadow: 0px 1px 1px #999; }
