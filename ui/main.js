@@ -1,32 +1,26 @@
-// submit username and password
-var submit = document.getElementById('submit_btn');
+var slideIndex = 1;
+showSlides(slideIndex);
 
-submit.onclick = function() {
-    
-    // create a request object
-    var request = new XMLHttpRequest();
-    
-    // capture the response and store it in a variable
-    request.onreadystatechange = function() {
-      if (request.readyState === XMLHttpRequest.DONE) {
-          // take some action
-          if (request.status === 200) {
-              // capture a list of names and render it
-              console.log('success');
-              alert('success');
-          } else if (request.status === 403) {
-              alert('failed');
-          } else if (request.status === 500) {
-              alert('failed2');
-          }
-      }  
-      // not done yet
-    };
-    
-    // make the request
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    request.open('POST', 'http://darkfist.imad.hasura-app.io/login', true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({username: username, password: password}));
-};
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
