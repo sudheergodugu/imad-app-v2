@@ -1,17 +1,22 @@
-#login_form {
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    right: 30%;
-    bottom: 20%;
-    font-size: 18px;
-}
-
-#f1 {
-    background-color: #ccc;
-    border-style: solid;
-    border-width: 1px;
-}
-.f1_label {
-    white-space: nowrap;
-}
+body {
+ +    font-family: sans-serif;
+ +    background-color: lightgrey;
+ +    margin-top: 75px;
+ +}
+ +
+ +.center {
+ +    text-align: center;
+ +}
+ +
+ +.text-big {
+ +    font-size: 300%;
+ +}
+ +
+ +.bold {
+ +    font-weight: bold;
+ +}
+ +
+ +.img-medium {
+ +    height: 200px;
+ +}
+ +
