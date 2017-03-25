@@ -75,8 +75,8 @@ var express = require('express');
   }
   
   app.get('/hash/:input', function (req, res) {
- -   var hashedString = hash(req.params.input, 'this-isspmedfsd');
- +   var hashedString = hash(req.params.input, 'this-is-some-random-string');
+   var hashedString = hash(req.params.input, 'this-isspmedfsd');
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
      res.send(hashedString);
   });
   
