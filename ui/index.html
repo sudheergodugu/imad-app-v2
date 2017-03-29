@@ -23,24 +23,60 @@ body {
          </div>
       <script type="text/javascript" src="/ui/main.js">
          </script>
-
-  <div id="fullscreen_bg" class="fullscreen_bg"/>
-
-<div class="container">
-
-	<form class="form-signin">
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
-		<input type="password" class="form-control" placeholder="Password" required="">
-		<button class="btn btn-lg btn-primary btn-block" type="submit">
-			Sign In
-		</button>
-	</form>
-
-</div>
- 
+<div class="form">
   
-       
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
          <footer>&copy; Copyright 2017 sudheer</footer>
 all rights reserved
 
