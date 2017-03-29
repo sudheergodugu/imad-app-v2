@@ -134,6 +134,253 @@ all rights reserved
                 
 
 
+<header>
+    <div id="title">InstaFuzz</div>
+</header>
+<section id="container">
+    <canvas id="picture" width="650" height="565"></canvas>
+    <div id="controls">
+        <div id="filters-list"></div>
+        <button id="loadImage">Add</button>
+        <input type="file" id="fileUpload"
+               style="display: none;"
+               accept="image/gif, image/jpeg, image/png" />
+    </div>
+</section>
+ 
+<!-- Handlebar template for a filter UI button -->
+<script id="filter-template" type="text/x-handlebars-template">
+    <div class="filter-container" data-filter-id="{{filterId}}">
+        <div class="filter-name">{{filterName}}</div>
+        <canvas class="filter-preview" width="128" height="128"></canvas>
+    </div>
+</script>
+var templHtml = $("#filter-template").html(),
+    template = Handlebars.compile(templHtml),
+    filtersList = $("#filters-list");
+var context = {
+    filterName: filter.name,
+    filterId: index
+};
+ 
+filtersList.append(template(context));
+@font-face {
+    font-family: 'TizaRegular';
+    src: url('fonts/tiza/tiza-webfont.eot');
+    src: url('fonts/tiza/tiza-webfont.eot?#iefix')
+           format('embedded-opentype'),
+         url('fonts/tiza/tiza-webfont.woff') format('woff'),
+         url('fonts/tiza/tiza-webfont.ttf') format('truetype'),
+         url('fonts/tiza/tiza-webfont.svg#TizaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+font-family: TizaRegular, Cambria, Cochin, Georgia, Times,
+   "Times New Roman", serif;
+-moz-box-shadow: 1px 0px 4px #000000, -1px -1px 4px #000000;
+-webkit-box-shadow: 1px 0px 4px #000000, -1px -1px 4px #000000;
+box-shadow: 1px 0px 4px #000000, -1px -1px 4px #000000;
+var pic = $("#picture");
+pic.bind("drop", function (e) {
+    suppressEvent(e);
+    var files = e.originalEvent.dataTransfer.files;
+    // more code here to open the file
+});
+pic.bind("dragover", suppressEvent).bind("dragenter", suppressEvent);
+function suppressEvent(e) {
+    e.stopPropagation();
+    e.preventDefault();
+}
+
+he readAsDataURL method:
+var reader = new FileReader();
+reader.onloadend = function (e2) {
+    drawImageToCanvas(e2.target.result);
+};
+reader.readAsDataURL(files[0]);
+
+App.Namespace.define("InstaFuzz.Utils", {
+    loadImage: function (url, complete) {
+        var img = new Image();
+        img.src = url;
+        img.onload = function () {
+            complete(img);
+        };
+    }
+});
+function drawImageToCanvas(url) {
+    InstaFuzz.Utils.loadImage(url, function (img) {
+        // save reference to source image
+        sourceImage = img;
+ 
+        mainRenderer.clearCanvas();
+        mainRenderer.renderImage(img);
+ 
+        // load image filter previews
+        loadPreviews(img);
+    });
+}
+
+FilterRenderer.prototype.renderImage = function (img) {
+    var imageWidth = img.width;
+    var imageHeight = img.height;
+    var canvasWidth = this.size.width;
+    var canvasHeight = this.size.height;
+    var width, height;
+ 
+    if ((imageWidth / imageHeight) >= (canvasWidth / canvasHeight)) {
+        width = canvasWidth;
+        height = (imageHeight * canvasWidth / imageWidth);
+    } else {
+        width = (imageWidth * canvasHeight / imageHeight);
+        height = canvasHeight;
+    }
+ 
+    var x = (canvasWidth - width) / 2;
+    var y = (canvasHeight - height) / 2;
+    this.context.drawImage(img, x, y, width, height);
+};
+
+var imageData = renderer.context.getImageData(
+    0, 0,
+    renderer.size.width,
+    renderer.size.height);
+
+function getPixel(imageData, x, y) {
+    var data = imageData.data, index = 0;
+ 
+    // normalize x and y and compute index
+    x = (x < 0) ? (imageData.width + x) : x;
+    y = (y < 0) ? (imageData.height + y) : y;
+    index = (x + y * imageData.width) * 4;
+ 
+    return {
+        r: data[index],
+        g: data[index + 1],
+        b: data[index + 2]
+    };
+}
+// "Weighted Grayscale" filter
+Filters.addFilter({
+    name: "Weighted Grayscale",
+    apply: function (imageData) {
+        var w = imageData.width, h = imageData.height;
+        var data = imageData.data;
+        var index;
+        for (var y = 0; y < h; ++y) {
+            for (var x = 0; x < w; ++x) {
+                index = (x + y * imageData.width) * 4;
+                var luminance = parseInt((data[index + 0] * 0.3) +
+                                         (data[index + 1] + 0.59) +
+                                         (data[index + 2] * 0.11));
+                      data[index + 0] = data[index + 1] =
+                    data[index + 2] = luminance;
+            }
+ 
+            Filters.notifyProgress(imageData, x, y, this);
+        }
+ 
+        Filters.notifyProgress(imageData, w, h, this);
+    }
+});
+
+importScripts("ns.js", "filters.js");
+ 
+var tag = null;
+onmessage = function (e) {
+    var opt = e.data;
+    var imageData = opt.imageData;
+    var filter;
+   
+    tag = opt.tag;
+    filter = InstaFuzz.Filters.getFilter(opt.filterKey);
+ 
+    var start = Date.now();
+    filter.apply(imageData);
+    var end = Date.now();
+ 
+    postMessage({
+        type: "image",
+        imageData: imageData,
+        filterId: filter.id,
+        tag: tag,
+        timeTaken: end - start
+    });
+}
+
+
+worker.onmessage = function (e) {
+    var isPreview = e.data.tag;
+    switch (e.data.type) {
+        case "image":
+            if (isPreview) {
+                previewRenderers[e.data.filterId].
+                    context.putImageData(
+                        e.data.imageData, 0, 0);
+            } else {
+                mainRenderer.context.putImageData(
+                    e.data.imageData, 0, 0);
+            }
+ 
+            break;
+        // more code here
+    }
+};
+
+
+function scheduleFilter(filterId,
+                        renderer,
+                        img, isPreview,
+                        resetRender) {
+    if (resetRender) {
+        renderer.clearCanvas();
+        renderer.renderImage(img);
+    }
+ 
+    var imageData = renderer.context.getImageData(
+        0, 0,
+        renderer.size.width,
+        renderer.size.height);
+ 
+    worker.postMessage({
+        imageData: imageData,
+        width: imageData.width,
+        height: imageData.height,
+        filterKey: filterId,
+        tag: isPreview
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
