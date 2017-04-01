@@ -12,9 +12,9 @@ var express = require('express');
  
  
  var config = {
-     user: "salmanjaveed",
+     user: "sudheergodugu",
      host: "db.imad.hasura-app.io",
-     database: "salmanjaveed",
+     database: "sudheergodugu",
      port: "5432",
      password: process.env.DB_PASSWORD
  };
